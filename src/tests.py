@@ -82,8 +82,8 @@ class TestRoman(unittest.TestCase):
         for num_arabic, num_roman in TEST_MAP:
             if num_arabic == 0:
                 continue
-            self.assertFalse(roman.isRoman(str(num_arabic)))
-            self.assertTrue(roman.isRoman(str(num_roman)))
+            self.assertFalse(roman.isRoman(num_arabic))
+            self.assertTrue(roman.isRoman(num_roman))
 
 def test_suite():
     return unittest.makeSuite(TestRoman)

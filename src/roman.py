@@ -97,7 +97,7 @@ def isRoman(s):
     if s == 'N':
         return 0
 
-    return bool(romanNumeralPattern.search(s))
+    return bool(romanNumeralPattern.search(str(s)))
 
 
 def fromRoman(s):
