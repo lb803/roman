@@ -78,6 +78,12 @@ class TestRoman(unittest.TestCase):
             self.assertEqual(output, _str(num_arabic))
             self.assertEqual(ex_st, os.EX_OK)
 
+    def test_main_isRoman(self):
+        for num_arabic, num_roman in TEST_MAP:
+            if num_arabic == 0:
+                continue
+            self.assertFalse(roman.isRoman(str(num_arabic)))
+            self.assertTrue(roman.isRoman(str(num_roman)))
 
 def test_suite():
     return unittest.makeSuite(TestRoman)
