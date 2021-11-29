@@ -88,6 +88,18 @@ romanNumeralPattern = re.compile("""
     """, re.VERBOSE)
 
 
+def isRoman(s):
+    """check whether the input is a Roman numeral"""
+    if not s:
+        raise InvalidRomanNumeralError('Input can not be blank')
+
+    # special case
+    if s == 'N':
+        return 0
+
+    return bool(romanNumeralPattern.search(s))
+
+
 def fromRoman(s):
     """convert Roman numeral to integer"""
     if not s:
